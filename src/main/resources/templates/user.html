@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>User</title>
+</head>
+<body>
+<center th:object="${user}">
+    <h2 th:inline="text">Hello <span style="color: darkcyan">[[${user.getName()}]] [[${user.getSurname()}]]</span></h2>
+    <h3 th:inline="text">Your username is <span style="color: darkcyan">[[${user.getUsername()}]]</span></h3>
+    <h3 th:inline="text">Your password is <span style="color: darkcyan">[[${user.getPassword()}]]</span></h3>
+    <br/><br/>
+    <a th:href="@{/logout}">Logout</a>
+</center>
+</body>
+</html>

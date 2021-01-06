@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" href="../static/css/main.css"
+    media="all">
+    <title>Login</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            justify-items: center;
+        }
+        p{
+            margin-top: 0.3em;
+            margin-bottom: 0.3em;
+        }
+
+        .container2{
+            margin-top: 40px;
+            width: 400px;
+            min-height: 250px;
+            background-color: aqua;
+            border-radius: 20px;
+        }
+        .inner-block{
+            display: flex;
+            justify-content: center;
+            justify-items: center;
+            margin-top: 30px;
+            margin-left: 50px;
+            width: 320px;
+            height: 240px;
+            text-align: center;
+        }
+        .input{
+            width: 200px;
+            height: 20px;
+            border-radius: 5px;
+            font-size: 17px;
+            font-family: Ebrima,serif;
+        }
+        label{
+            color: blue;
+            font-family: "Franklin Gothic Medium",sans-serif;
+            font-size: 15px;
+        }
+        .submit{
+            width: 170px;
+            height: 35px;
+            border-radius: 12px;
+            font-family: Ebrima,Ebrima, sans-serif, b;
+            font-size: 15px;
+        }
+        .inner-block2{
+            width: 250px;
+            height: 50px;
+            text-align: center;
+            margin-left: 70px;
+        }
+        a{
+            text-decoration: none;
+            font-size: 30px;
+            font-family: "Times New Roman",serif;
+        }
+        a:hover{
+            text-decoration: none;
+            color: green;
+        }
+    </style>
+</head>
+<body>
+<div class="container2">
+    <div class="inner-block">
+        <form action="/login"   method="post">
+            <div><label>Username :
+                <p><input class="input" type="text" placeholder="username" name="username"/></p></label></div>
+            <br/>
+            <div><label>Password :
+                <p><input class="input" type="password"  name="password"></p></label></div>
+            <br/>
+            <div><input class="submit" type="submit" value="Sign in"></div>
+        </form>
+    </div>
+    <div class="inner-block2">
+        <a href="/registration">Log in</a>
+    </div>
+</div>
+</body>
+</html>
