@@ -57,8 +57,6 @@ public class AdminController {
 
     @PostMapping(value = "/admin/update")
     public String update(@ModelAttribute("user") User user) {
-        System.out.println(user.getId());
-
         userService.update(user);
         return "redirect:/admin/users";
     }
