@@ -51,7 +51,6 @@ public class AdminController {
     @GetMapping(value = "/admin/update/{id}")
     public String getUpdate(@PathVariable(value = "id") long id, ModelMap model) {
         User user = userService.findById(id);
-        System.out.println(user.getId());
         model.addAttribute("user", user);
         return "update";
     }
