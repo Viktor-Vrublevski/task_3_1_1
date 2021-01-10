@@ -35,18 +35,6 @@ public class UserService {
         return userRepository.findByUsername(username);
     }
 
-    public void update(User user) {
-        EntityManager manager = factory.createEntityManager();
-        manager.getTransaction().begin();
-        Query query = manager.createQuery("UPDATE User SET name =?1, surname= ?2, age= ?3 WHERE id= ?4");
-        query.setParameter(1, user.getName());
-        query.setParameter(2, user.getSurname());
-        query.setParameter(3, user.getAge());
-        query.setParameter(4,user.getId());
-        query.executeUpdate();
-        manager.getTransaction().commit();
-    }
-
     public void delete(Long id) {
         EntityManager manager = factory.createEntityManager();
         manager.getTransaction().begin();
