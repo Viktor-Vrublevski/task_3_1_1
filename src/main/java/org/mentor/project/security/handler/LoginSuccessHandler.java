@@ -22,18 +22,14 @@ public class LoginSuccessHandler implements AuthenticationSuccessHandler {
     public void onAuthenticationSuccess(HttpServletRequest request,
                                         HttpServletResponse response,
                                         Authentication auth) throws IOException, ServletException {
-        String username = SecurityContextHolder.getContext()
-                .getAuthentication().getName();
-        User user = service.findByUsername(username);
-        for (Role role : user.getRoles()) {
-            if (role.getRole().equals("ROLE_ADMIN")) {
-                response.sendRedirect("/admin/users");
-                break;
-            }
-            if (role.getRole().equals("ROLE_USER")) {
-                response.sendRedirect("/user");
-                break;
-            }
+        
+        User user = (User) SecurityContextHolder.getContext()
+                .getAuthentication().getPrincipal();
+        if (user.getRoles().size() > 1) {
+            response.sendRedirect("/admin/users");
+        }
+        if (user.getRoles().size() == 1) {
+            response.sendRedirect("/user");
         }
     }
 }
